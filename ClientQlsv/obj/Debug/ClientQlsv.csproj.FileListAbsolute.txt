@@ -1,0 +1,6 @@
+D:\ANH_HAO\Visual Studio Projects\Cong Nghe Moi\AppHarborProject\ClientQlsv\ClientQlsv\bin\ClientQlsv.dll.config
+D:\ANH_HAO\Visual Studio Projects\Cong Nghe Moi\AppHarborProject\ClientQlsv\ClientQlsv\bin\ClientQlsv.dll
+D:\ANH_HAO\Visual Studio Projects\Cong Nghe Moi\AppHarborProject\ClientQlsv\ClientQlsv\bin\ClientQlsv.pdb
+D:\ANH_HAO\Visual Studio Projects\Cong Nghe Moi\AppHarborProject\ClientQlsv\ClientQlsv\obj\Debug\ClientQlsv.dll
+D:\ANH_HAO\Visual Studio Projects\Cong Nghe Moi\AppHarborProject\ClientQlsv\ClientQlsv\obj\Debug\ClientQlsv.pdb
+D:\ANH_HAO\Visual Studio Projects\Cong Nghe Moi\AppHarborProject\ClientQlsv\ClientQlsv\obj\Debug\ClientQlsv.csprojResolveAssemblyReference.cache

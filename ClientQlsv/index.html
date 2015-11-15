@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="ClientQlsv">
+<head>
+    <title></title>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-resource.js"></script>
+    <script src="Scripts/angular-cookies.js"></script>
+    <script src="js/services.js"></script>
+    <link rel="stylesheet" href="Content/bootstrap.css" />
+</head>
+<body>
+
+    <div class="container" ng-controller="getAll">
+        <h2>Danh sách thông tin chi tiết sinh viên</h2>
+        <h5 ng-model="code1">Status code: {{code1}}</h5>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Mã số sinh viên</th>
+                    <th>Họ tên</th>
+                    <th>Ngày sinh</th>
+                    <th>Số điện thoại</th>
+                    <th>Điểm tích lũy</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="sv in sinhViens">
+                    <td>{{sv.MaSoSinhVien}}</td>
+                    <td>{{sv.HoTen}}</td>
+                    <td>{{sv.NgaySinh}}</td>
+                    <td>{{sv.SoDienThoai}}</td>
+                    <td>{{sv.DiemTichLuy}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container" ng-controller="addSinhVien">
+        <form ng-submit="sendPost()">
+            <h2>Thêm sinh viên</h2>
+            <div class="form-group">
+                <label>Họ tên:</label>
+                <input type="text" class="form-control" ng-model="hoTen">
+            </div>
+            <div class="form-group">
+                <label>Ngày:</label>
+                <input type="number" class="form-control" ng-model="ngay" min="1" max="31">
+                <label>Tháng:</label>
+                <input type="number" class="form-control" ng-model="thang" min="1" max="12">
+                <label>Năm:</label>
+                <input type="number" class="form-control" ng-model="nam" min="0" max="9999">
+            </div>
+            <div class="form-group">
+                <label>Số điện thoại:</label>
+                <input type="text" class="form-control" ng-model="soDienThoai">
+            </div>
+            <div class="form-group">
+                <label>Điểm tích lũy:</label>
+                <input type="text" class="form-control" ng-model="diemTichLuy">
+            </div>
+            <button type="submit">Thêm mới</button>
+        </form>
+    </div>
+
+    <div class="container" ng-controller="getAll">
+        <h2>Xóa hoặc Sửa sinh viên</h2>
+
+        <div>
+            <label>Danh sách sinh viên hiện tại:</label>
+            <select class="form-control" id="sel">
+                <option ng-repeat="sv in sinhViens" value={{sv.MaSoSinhVien}}>{{sv.MaSoSinhVien}} - {{sv.HoTen}}</option>
+            </select>
+        </div>
+
+        <div class="form-group" ng-controller="getSinhVien">
+            <form ng-submit="sendGet()">
+                <button type="submit">Xem chi tiết</button>
+            </form>
+            <br />
+            <div class="form-group">
+                <label>Họ tên:</label>
+                <input type="text" class="form-control" ng-model="hoTen2">
+            </div>
+            <div class="form-group">
+                <label>Ngày:</label>
+                <input type="number" class="form-control" ng-model="ngay2" min="1" max="31">
+                <label>Tháng:</label>
+                <input type="number" class="form-control" ng-model="thang2" min="1" max="12">
+                <label>Năm:</label>
+                <input type="number" class="form-control" ng-model="nam2" min="0" max="9999">
+            </div>
+            <div class="form-group">
+                <label>Số điện thoại:</label>
+                <input type="text" class="form-control" ng-model="soDienThoai2">
+            </div>
+            <div class="form-group">
+                <label>Điểm tích lũy:</label>
+                <input type="text" class="form-control" ng-model="diemTichLuy2">
+            </div>
+
+            <div class="form-group" ng-controller="updateSinhVien">
+                <form ng-submit="sendPut()">
+                    <button type="submit">Sửa</button>
+                </form>
+            </div>
+
+        </div>
+
+
+
+        <div class="form-group" ng-controller="deleteSinhVien">
+            <form ng-submit="sendDelete()">
+                <button type="submit">Xóa</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
